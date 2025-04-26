@@ -1,3 +1,7 @@
+import { ref, deleteObject } from "firebase/storage";
+mport { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "./firebase";
+
 async function uploadImage(file) {
   const storageRef = storage.ref();
   const imagesRef = storageRef.child('uploads/' + file.name);
